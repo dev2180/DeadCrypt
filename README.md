@@ -24,17 +24,11 @@ surprisingly practical way to smuggle arbitrary data through video-only
 channels.
 
 <div align="center">
-<table>
-<tr>
-<td align="center"><code>secret.zip</code><br/>📦 any file</td>
-<td align="center">→</td>
-<td align="center">🟥🟩🟦<br/><b>RGB frames</b></td>
-<td align="center">→</td>
-<td align="center">🎞️<br/><code>secret.zip.mkv</code></td>
-<td align="center">→</td>
-<td align="center"><code>secret.zip</code><br/>✅ identical</td>
-</tr>
-</table>
+
+![DeadCrypt demo — encoding a file into lossless TV-static video](docs/demo.gif)
+
+<sub>A real file → the <code>deadcrypt encode</code> command → the resulting lossless static video. Decode reverses it byte-for-byte.</sub>
+
 </div>
 
 ## Table of contents
@@ -191,7 +185,8 @@ DeadCrypt/
 │   ├── decoder.py         # video -> file
 │   └── cli.py             # argparse CLI + interactive mode
 ├── tests/                 # unit tests + ffmpeg round-trip test
-├── docs/architecture.md   # design notes & container format
+├── tools/make_demo.py     # regenerates docs/demo.gif from a real encode
+├── docs/                  # architecture notes + demo.gif
 ├── encoder.py / decoder.py# thin backwards-compatible shims
 ├── pyproject.toml         # packaging + console entry point
 └── .github/workflows/ci.yml
